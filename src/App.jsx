@@ -36,7 +36,6 @@ function App() {
     <AppContext.Provider
       value={{ posts, postUrl, setPosts, contacts, fetchPosts }}
     >
-      <Dashboard />
       <Routes>
         <Route path="/" element={<Dashboard />}></Route>
         <Route path="/post/:id" element={<PostView />}></Route>

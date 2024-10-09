@@ -1,17 +1,17 @@
-import { useContext, useEffect, useState } from "react";
-import { AppContext } from "../App";
+import SendIcon from "@mui/icons-material/Send";
 import {
   Avatar,
-  Divider,
-  Paper,
-  Typography,
   Box,
-  TextField,
-  Stack,
+  Divider,
   IconButton,
+  Paper,
+  Stack,
+  TextField,
+  Typography,
 } from "@mui/material";
-import SendIcon from "@mui/icons-material/Send";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { AppContext } from "../App";
 import CommentsList from "./CommentsList";
 
 function Post({ post }) {
@@ -68,7 +68,7 @@ function Post({ post }) {
 
     console.log("newComment Response", response);
 
-    await context.fetchComments();
+    //await context.fetchComments();
 
     setComment(initialComment);
   };
@@ -97,9 +97,9 @@ function Post({ post }) {
           {postAuthor.firstName} {postAuthor.lastName}
           <Typography sx={{ display: "block" }} variant="subtitle1">
             <Link
+              to={`/post/${post.id}`}
               className="post-title-colour"
               sx={{ display: "block", fontWeight: 600 }}
-              to={`/post/${post.id}`}
             >
               {post.title}
             </Link>

@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { AppContext } from "../App";
 import { Avatar, TextField, Stack, Button, Paper } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 function CreatePost() {
   const context = useContext(AppContext);
@@ -8,6 +9,7 @@ function CreatePost() {
     title: "",
     content: "",
   };
+  const navigate = useNavigate();
   const [postData, setPostData] = useState(initialpostData);
 
   const randomLoggedIn = context.contacts?.find((y) => y.id == 1);
@@ -36,7 +38,7 @@ function CreatePost() {
 
     setPostData(initialpostData);
 
-    
+    navigate(`/post/${post.id}`)
   };
 
   const handleChange = (event) => {
