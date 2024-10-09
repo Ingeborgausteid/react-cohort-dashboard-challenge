@@ -5,6 +5,51 @@
   text-align: center;
 }
 
+.body {
+  background-color: #F0F5FA;
+}
+
+.container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 100px 700px;
+  margin-top: 1rem;
+}
+
+.header {
+  background-color: #000046;
+  
+}
+
+.post-button {
+  background-color: #000046;
+}
+
+.button-hover-colour {
+  color: #64dc78;
+}
+
+.font-colour {
+  color: #000046;
+}
+
+.form-background-colour {
+  background-color: #e6ebf5;
+  
+}
+
+.post-title-colour {
+  color: #64648c;
+}
+
+.post-background {
+  background-color: white;
+}
+
+.add-comment-font{
+  color: #64648c;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -16,6 +61,22 @@
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.sidebar-item {
+  padding: 1rem;
+}
+
+.title-header {
+  padding: 1rem;
+  width: 40%;
+  height: 40%;
+}
+
+.input-title {
+  width: 40%;
+  height: 40%;
+  margin-left: 3rem;
 }
 
 @keyframes logo-spin {
