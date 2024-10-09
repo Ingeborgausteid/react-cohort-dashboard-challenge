@@ -1,7 +1,8 @@
 import { createContext, useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
-import Dashboard from "./Components/Dashboard";
+import Header from "./Components/Header";
+import SideBar from "./Components/SideBar";
+import Feed from "./Components/Feed";
 import PostView from "./Components/PostView";
 
 const AppContext = createContext();
@@ -36,10 +37,15 @@ function App() {
     <AppContext.Provider
       value={{ posts, postUrl, setPosts, contacts, fetchPosts }}
     >
-      <Routes>
-        <Route path="/" element={<Dashboard />}></Route>
-        <Route path="/post/:id" element={<PostView />}></Route>
-      </Routes>
+      <Header />
+      <div className="body container">
+        <SideBar />
+
+        <Routes>
+          <Route path="/" element={<Feed />}></Route>
+          <Route path="/post/:id" element={<PostView />}></Route>
+        </Routes>
+      </div>
     </AppContext.Provider>
   );
 }
